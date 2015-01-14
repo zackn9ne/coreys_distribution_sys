@@ -1,4 +1,9 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+// will be broken in node but app but not in dist
+$icon-font-path: "../fonts/";//manually cp-r'd
+
+$fa-font-path: "../font-awesome/fonts";//manually cp-r'd
+@import "../bower_components/font-awesome/scss/font-awesome";
+
 
 // bower:scss
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";

@@ -6,9 +6,20 @@ var gulp = require('gulp');
 // load plugins
 var $ = require('gulp-load-plugins')();
 
-// safety-latch
-gulp.task('clear', function () {
-  $.cache.clearAll();
+// safety-latch cuz image task sucks
+gulp.task('clear_cache', function (done) {
+    return $.cache.clearAll(done);
+});
+
+gulp.task('images', ['clear_cache'],function () {
+    return gulp.src('app/images/**/*')
+        .pipe($.cache($.imagemin({
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest('dist/images'))
+        .pipe($.size());
 });
 
 gulp.task('styles', function () {
@@ -47,16 +58,16 @@ gulp.task('html', ['styles', 'scripts'], function () {
         .pipe($.size());
 });
 
-gulp.task('images', function () {
-    return gulp.src('app/images/**/*')
-        .pipe($.cache($.imagemin({
-            optimizationLevel: 3,
-            progressive: true,
-            interlaced: true
-        })))
-        .pipe(gulp.dest('dist/images'))
-        .pipe($.size());
-});
+// gulp.task('images', function () {
+//     return gulp.src('app/images/**/*')
+//         .pipe($.cache($.imagemin({
+//             optimizationLevel: 3,
+//             progressive: true,
+//             interlaced: true
+//         })))
+//         .pipe(gulp.dest('dist/images'))
+//         .pipe($.size());
+// });
 
 gulp.task('fonts', function () {
     return $.bowerFiles()
