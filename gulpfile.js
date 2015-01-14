@@ -6,6 +6,11 @@ var gulp = require('gulp');
 // load plugins
 var $ = require('gulp-load-plugins')();
 
+// safety-latch
+gulp.task('clear', function () {
+  $.cache.clearAll();
+});
+
 gulp.task('styles', function () {
     return gulp.src('app/styles/main.scss')
         .pipe($.rubySass({
