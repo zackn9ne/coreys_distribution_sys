@@ -1,6 +1,8 @@
 // will be broken in node but app but not in dist
 $icon-font-path: "../fonts/";//manually cp-r'd
 
+@import "sprite";
+
 $fa-font-path: "../font-awesome/fonts";//manually cp-r'd
 @import "../bower_components/font-awesome/scss/font-awesome";
 
@@ -17,6 +19,7 @@ $white: white;
 $green: #5cb85c;
 @import "youtube-carousel.scss"; 
 @import "user.scss";
+@import "user-mobile.scss";
 // enddeveloper
 
 .browsehappy {

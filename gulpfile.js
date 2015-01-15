@@ -6,6 +6,25 @@ var gulp = require('gulp');
 // load plugins
 var $ = require('gulp-load-plugins')();
 
+var spritesmith = require('gulp.spritesmith'); //may not pickup
+var csso = require('gulp-csso');
+
+gulp.task('sprite', function () {
+  var spriteData = gulp.src('app/images/spritesmith/*.png').pipe(spritesmith({
+    imgName: 'sprite.png',
+    imgPath: '../images/sprite.png',
+    cssName: 'sprite.css'
+  }));
+  spriteData.img.pipe(gulp.dest('dist/images'));
+  spriteData.img.pipe(gulp.dest('app/images'));
+
+  // Pipe CSS stream through CSS optimizer and onto disk
+  spriteData.css
+    .pipe(gulp.dest('app/styles'));
+    // .pipe(csso())
+    // .pipe(gulp.dest('dist/styles'));
+});
+
 // safety-latch cuz image task sucks
 gulp.task('clear_cache', function (done) {
     return $.cache.clearAll(done);
