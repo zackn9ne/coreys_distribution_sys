@@ -193,6 +193,11 @@
   margin: 0px auto 10px;
 }
 
+#about-section {
+  p {
+    margin: 20px 0px 33px;
+  }
+}
 
 body {
   background: url("../images/header.jpg")no-repeat center center fixed;
@@ -206,7 +211,7 @@ body {
   font-family:"Open Sans Light",X-LocaleSpecific-Light,"Open Sans",X-LocaleSpecific,sans-serif;
 
 }
-#corey_trains {
+#training-section {
   .col-md-3{
     background-color: #F2F2F2;
     border-radius: 5px 5px 5px 5px;
@@ -263,7 +268,7 @@ body {
     text-align: center;
   }
 
-  #corey_form {
+  #contact-section {
     background: url("../images/white_arrow.png") no-repeat scroll 50% 0 #363A36;
     h1 {
       color: $white;

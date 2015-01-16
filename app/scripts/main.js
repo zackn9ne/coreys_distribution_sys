@@ -20,7 +20,7 @@ $('a[href*=#]:not([href=#])').click(function () {
 
 
         if (target.length) {
-            $('html,body').animate({ scrollTop: target.offset().top - 80}, 500);
+            $('html,body').animate({ scrollTop: target.offset().top - 0}, 500);
             window.location.hash = hashStr;
             return false;
         }
