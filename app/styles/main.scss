@@ -1,9 +1,9 @@
 // will be broken in node but app but not in dist
-$icon-font-path: "../fonts/";//manually cp-r'd
+$icon-font-path: "../fonts/";//manually cp-r'd dont know what it does
 
 @import "sprite";
 
-$fa-font-path: "../font-awesome/fonts";//manually cp-r'd
+$fa-font-path: "../fonts";//manually cp-r'd these are the awesome fonts via bower
 @import "../bower_components/font-awesome/scss/font-awesome";
 
 

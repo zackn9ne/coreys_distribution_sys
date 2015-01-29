@@ -59,7 +59,7 @@ moreButton.on('click', function() {
 
 // cycle the divs
 // //script to cycle quotes div
-var divs = $('[id^="quote_"]').hide(),
+var divs = $('[id^="quote"]').hide(),
     i = 0;
 
 function cycle() {
