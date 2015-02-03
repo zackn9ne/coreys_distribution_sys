@@ -3,11 +3,19 @@
 
 var gulp = require('gulp');
 
-// load plugins
+// load plugins automagic
 var $ = require('gulp-load-plugins')();
-
 var spritesmith = require('gulp.spritesmith'); //may not pickup
-var csso = require('gulp-csso');
+var csso = require('gulp-csso'); //may not pickup
+
+gulp.task('favicons', function () {
+  gulp.src('index.html')
+    .pipe(favicons({
+        files: { dest: '/' },
+        settings: { background: '#1d1d1d' }
+      }))
+    .pipe(gulp.dest('./'));
+});
 
 gulp.task('sprite', function () {
   var spriteData = gulp.src('app/images/spritesmith/*.png').pipe(spritesmith({
