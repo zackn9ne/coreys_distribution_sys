@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 node_modules
 dist
 .tmp
 .sass-cache
 app/bower_components
 test/bower_components
-=======
 *.swp
 node_modules
->>>>>>> 8476a54cd59751306514d7673d13e6ab8bbcc23a
