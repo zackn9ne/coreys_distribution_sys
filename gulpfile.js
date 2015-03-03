@@ -7,6 +7,16 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var spritesmith = require('gulp.spritesmith'); //may not pickup
 var csso = require('gulp-csso'); //may not pickup
+var shell = require('gulp-shell');
+var deploy      = require('gulp-gh-pages');
+
+/**
+ *  * Push build to gh-pages
+ *   */
+gulp.task('deploy', function () {
+    return gulp.src("./dist/**/*")
+      .pipe(deploy())
+});
 
 gulp.task('favicons', function () {
   gulp.src('index.html')
@@ -113,7 +123,7 @@ gulp.task('clean', function () {
     return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'extras']);
+gulp.task('build', ['html', 'images', 'fonts', 'extras', 'shorthand']);
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');
@@ -155,6 +165,13 @@ gulp.task('wiredep', function () {
         }))
         .pipe(gulp.dest('app'));
 });
+
+gulp.task('shorthand', function () {
+  return gulp.src('*.js', {read: false})
+    .pipe(shell([
+      'echo "cd into dist and run dot slash deploy"'
+      ]));
+      });
 
 gulp.task('watch', ['connect', 'serve'], function () {
     var server = $.livereload();
