@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "yo-ya",
   "version": "0.0.0",
   "dependencies": {},
@@ -32,8 +31,7 @@
     "wiredep": "^1.4.3"
   },
   "engines": {
-    "node": ">=0.10.0"
-=======
+    "node": ">=0.10.0",
   "name": "node-ws-test",
   "version": "0.0.1",
   "repository": {
@@ -49,6 +47,6 @@
   },
   "scripts": {
     "start": "node index.js"
->>>>>>> 8476a54cd59751306514d7673d13e6ab8bbcc23a
+  }
   }
 }
