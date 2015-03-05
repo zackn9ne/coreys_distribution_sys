@@ -8,12 +8,11 @@ var $ = require('gulp-load-plugins')();
 var spritesmith = require('gulp.spritesmith'); //may not pickup
 var csso = require('gulp-csso'); //may not pickup
 var shell = require('gulp-shell');
-var deploy      = require('gulp-gh-pages');
 
 /**
  *  * Push build to gh-pages
  *   */
-gulp.task('deploy', function () {
+gulp.task('$.ghPages', function () {
     return gulp.src("./dist/**/*")
       .pipe(deploy())
 });
