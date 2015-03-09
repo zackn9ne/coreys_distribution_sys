@@ -1,7 +1,10 @@
 {
   "name": "yo-ya",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.4.5",
+    "ws": "0.4.x"
+  },
   "devDependencies": {
     "connect": "^2.14.4",
     "connect-livereload": "^0.4.0",
@@ -31,38 +34,13 @@
     "wiredep": "^1.4.3"
   },
   "engines": {
-    "node": ">=0.10.0",
-  "name": "node-ws-test",
-  "version": "0.0.1",
+    "node": "0.10.x"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/heroku-examples/node-ws-test.git"
   },
-  "dependencies": {
-    "express": "^4.4.5",
-    "ws": "0.4.x"
-  },
-  "engines": {
-    "node": "0.10.x"
-  },
   "scripts": {
     "start": "node index.js"
-  }
-    "name": "node-ws-test",
-    "version": "0.0.1",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/heroku-examples/node-ws-test.git"
-    },
-    "dependencies": {
-      "express": "^4.4.5",
-      "ws": "0.4.x"
-    },
-    "engines": {
-      "node": "0.10.x"
-    },
-    "scripts": {
-      "start": "node index.js"
-    }
   }
 }
