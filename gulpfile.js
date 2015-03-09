@@ -12,9 +12,9 @@ var shell = require('gulp-shell');
 /**
  *  * Push build to gh-pages
  *   */
-gulp.task('$.ghPages', function () {
+gulp.task('deploy', function () {
     return gulp.src("./dist/**/*")
-      .pipe(deploy())
+      .pipe($.ghPages())
 });
 
 gulp.task('favicons', function () {
