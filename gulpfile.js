@@ -7,7 +7,6 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var spritesmith = require('gulp.spritesmith'); //may not pickup
 var csso = require('gulp-csso'); //may not pickup
-var shell = require('gulp-shell');
 
 /**
  *  * Push build to gh-pages
