@@ -5,7 +5,6 @@ var gulp = require('gulp');
 
 // load plugins automagic
 var $ = require('gulp-load-plugins')();
-var spritesmith = require('gulp.spritesmith'); //may not pickup
 var csso = require('gulp-csso'); //may not pickup
 
 /**
@@ -26,7 +25,7 @@ gulp.task('favicons', function () {
 });
 
 gulp.task('sprite', function () {
-  var spriteData = gulp.src('app/images/spritesmith/*.png').pipe(spritesmith({
+  var spriteData = gulp.src('app/images/spritesmith/*.png').pipe($.gulpSpritesmith({
     imgName: 'sprite.png',
     imgPath: '../images/sprite.png',
     cssName: 'sprite.css'
@@ -121,7 +120,7 @@ gulp.task('clean', function () {
     return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'extras', 'shorthand']);
+gulp.task('build', ['html', 'images', 'fonts', 'extras']);
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');
@@ -164,12 +163,6 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('app'));
 });
 
-gulp.task('shorthand', function () {
-  return gulp.src('*.js', {read: false})
-    .pipe(shell([
-      'echo "cd into dist and run dot slash deploy"'
-      ]));
-      });
 
 gulp.task('watch', ['connect', 'serve'], function () {
     var server = $.livereload();
