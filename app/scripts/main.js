@@ -71,8 +71,10 @@ function cycle() {
     //   and reset to 0 when it equals divs.length
 }
 
-
-
+//collapse bootstrap menu
+$(document).on('click',function(){
+$('.collapse').collapse('hide');
+}); 
 
 
 //go go go!
