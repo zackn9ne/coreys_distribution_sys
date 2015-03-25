@@ -15,6 +15,18 @@ p {
 .nav > li {
   display: inline-block !important;
 }
+.navbar-default {
+    .navbar-collapse {
+        background: #eaeaea;
+        ul.nav {
+            li {
+                a {
+                color: #333333;
+                }
+            }
+        }
+    }
+}
 .navbar-nav {
   float: none !important;
 
@@ -34,7 +46,6 @@ p {
 .navbar-default { border: none; margin-bottom: 0 }
 
 #contact-form { border: 6px solid rgb(57,124,177) !important;     background-color: #F2F7F9;
-  width: 465px;
   padding: 20px;
   margin: 70px auto;
   border: 6px solid #8FB5C1;
@@ -131,7 +142,7 @@ p {
 
       #page-head {
         background: white;
-        padding: 1.9em .7em .7em 2.7em;
+        padding: 1.9em .7em 2.7em .7em;
         display: block;
         height: 200px;
         h1{ font-size: 60px;
