@@ -1,4 +1,5 @@
 run
+gulp
 git subtree push --prefix dist origin gh-pages
 ssh into corey server
 cd html

@@ -8962,11 +8962,7 @@ button.close {
 }
 
 body {
-  padding-top: 110px !important;
-}
-
-h1 {
-  margin-bottom: .5em !important;
+  padding-top: 90px !important;
 }
 
 p {
@@ -8976,13 +8972,6 @@ p {
 
 .nav > li {
   display: inline-block !important;
-}
-
-.navbar-default .navbar-collapse {
-  background: #eaeaea;
-}
-.navbar-default .navbar-collapse ul.nav li a {
-  color: #333333;
 }
 
 .navbar-nav {
@@ -9361,6 +9350,13 @@ a:link, a:visited {
   .nav > li {
     float: left;
     clear: both;
+  }
+
+  .navbar-default .navbar-collapse {
+    background: #eaeaea;
+  }
+  .navbar-default .navbar-collapse ul.nav li a {
+    color: #333333;
   }
 }
 .browsehappy {
