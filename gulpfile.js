@@ -2,10 +2,10 @@
 // generated on 2015-01-13 using generator-gulp-webapp 0.1.0
 
 var gulp = require('gulp');
+var spritesmith = require('gulp.spritesmith')
 
 // load plugins automagic
 var $ = require('gulp-load-plugins')();
-var csso = require('gulp-csso'); //may not pickup
 
 /**
  *  * Push build to gh-pages
@@ -15,17 +15,10 @@ gulp.task('deploy', function () {
       .pipe($.ghPages())
 });
 
-gulp.task('favicons', function () {
-  gulp.src('index.html')
-    .pipe(favicons({
-        files: { dest: '/' },
-        settings: { background: '#1d1d1d' }
-      }))
-    .pipe(gulp.dest('./'));
-});
 
 gulp.task('sprite', function () {
-  var spriteData = gulp.src('app/images/spritesmith/*.png').pipe($.gulpSpritesmith({
+  // Generate spritesheet
+  var spriteData = gulp.src('app/images/spritesmith/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
     imgPath: '../images/sprite.png',
     cssName: 'sprite.css'
@@ -84,7 +77,6 @@ gulp.task('html', ['styles', 'scripts'], function () {
         .pipe($.uglify())
         .pipe(jsFilter.restore())
         .pipe(cssFilter)
-        .pipe($.csso())
         .pipe(cssFilter.restore())
         .pipe($.useref.restore())
         .pipe($.useref())
@@ -102,16 +94,25 @@ gulp.task('html', ['styles', 'scripts'], function () {
 //         .pipe(gulp.dest('dist/images'))
 //         .pipe($.size());
 // });
+var config = {
+     sassPath: './resources/sass',
+     bowerDir: 'app/bower_components' 
+}
 
-gulp.task('fonts', function () {
-    return $.bowerFiles()
-        .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
-        .pipe($.flatten())
-        .pipe(gulp.dest('dist/fonts'))
-        .pipe($.size());
+// get fonts ready for distribution 1/2 sources //
+gulp.task('moveBowerFonts', function() { 
+    return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*') 
+      .pipe(gulp.dest('./dist/fonts')); 
 });
 
-gulp.task('extras', function () {
+// get fonts ready for distribution 2/2 sources //
+gulp.task('moveBootstrapFonts', function() {
+  return gulp.src(config.bowerDir + '/bootstrap-sass-official/vendor/assets/fonts/bootstrap/**.*')
+      .pipe(gulp.dest('./dist/fonts')); 
+});
+
+
+gulp.task('extraPages', function () {
     return gulp.src(['app/*.*', '!app/*.html'], { dot: true })
         .pipe(gulp.dest('dist'));
 });
@@ -120,7 +121,8 @@ gulp.task('clean', function () {
     return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'extras']);
+//main runner(s)
+gulp.task('build', ['html', 'images', 'moveBootstrapFonts', 'moveBowerFonts', 'extraPages']);
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');
