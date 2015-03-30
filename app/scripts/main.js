@@ -38,18 +38,17 @@ $('a[href*=#]:not([href=#])').click(function () {
 moreButton = $('.load-more');
 // 
 coreyFeed = new Instafeed({
-get: 'user',
-userId: 303777521,
-accessToken: '1547287828.1e10647.be88b5479fdf4008a02ad67c7b3c6dcc',
-limit: 8,
-template: '<a class="col-md-2 bg" href="{{link}}"><img src="http://{{image}}" /></a>',
+  get: 'user',
+  userId: 303777521,
+  accessToken: '1547287828.1e10647.be88b5479fdf4008a02ad67c7b3c6dcc',
+  limit: 8,
+  template: '<a class="col-md-2 bg" href="{{link}}"><img src="{{image}}" /></a>',
 
-after: function() {
-	if (!this.hasNext()) {
-		moreButton.hide();
-	}
-}
-
+  after: function() {
+    if (!this.hasNext()) {
+      moreButton.hide();
+    }
+  }
 });
 
 // call feed.next() on button click
@@ -72,8 +71,8 @@ function cycle() {
 }
 
 // close bootstrap mobile menu
-$(document).on('click',function(){
-$('.collapse').collapse('hide');
+$('ul.nav').on('click',function(){
+  $('.collapse').collapse('hide');
 });
 
 
