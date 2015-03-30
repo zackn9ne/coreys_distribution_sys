@@ -1,2 +1,7 @@
 run
 git subtree push --prefix dist origin gh-pages
+ssh into corey server
+cd html
+rm -rf coreys_distribution_sys
+git clone https://github.com/zackn9ne/coreys_distribution_sys.git
+exit
