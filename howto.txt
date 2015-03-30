@@ -1,5 +1,8 @@
-run
-gulp
+run gulp watch, to watch on 9000
+
+run gulp to build site to dist/
+
+*deploy*
 git push origin master
 git subtree push --prefix dist origin gh-pages
 ssh into corey server
