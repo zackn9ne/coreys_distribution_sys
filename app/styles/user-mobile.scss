@@ -7,5 +7,17 @@
   float: left;
   clear: both;
 }
+.navbar-default {
+    .navbar-collapse {
+        background: #eaeaea;
+        ul.nav {
+            li {
+                a {
+                color: #333333;
+                }
+            }
+        }
+    }
+}
 
 }

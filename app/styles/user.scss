@@ -1,12 +1,9 @@
 $text-grey: #696969; 
 
 body {
-  padding-top: 110px !important;
+  padding-top: 90px !important;
 }
 
-h1 {
-	margin-bottom: .5em !important;
-}
 
 p {
 	color: $text-grey;
@@ -14,18 +11,6 @@ p {
 }
 .nav > li {
   display: inline-block !important;
-}
-.navbar-default {
-    .navbar-collapse {
-        background: #eaeaea;
-        ul.nav {
-            li {
-                a {
-                color: #333333;
-                }
-            }
-        }
-    }
 }
 .navbar-nav {
   float: none !important;
