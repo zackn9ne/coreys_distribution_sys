@@ -9351,6 +9351,9 @@ a:link, a:visited {
     float: left;
     clear: both;
   }
+  .nav > li.no-mobile {
+    display: none !important;
+  }
 
   .navbar-default .navbar-collapse {
     background: #eaeaea;
