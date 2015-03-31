@@ -6,17 +6,20 @@
 .nav > li {
   float: left;
   clear: both;
+    &.no-mobile {
+      display: none !important; 
+    }
 }
 .navbar-default {
     .navbar-collapse {
         background: #eaeaea;
-        ul.nav {
-            li {
-                a {
-                color: #333333;
-                }
-            }
-        }
+          ul.nav {
+              li {
+                  a {
+                  color: #333333;
+                  }
+              }
+          }
     }
 }
 
