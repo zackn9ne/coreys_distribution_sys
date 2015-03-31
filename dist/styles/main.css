@@ -9361,6 +9361,10 @@ a:link, a:visited {
   .navbar-default .navbar-collapse ul.nav li a {
     color: #333333;
   }
+
+  .tight-mob {
+    letter-spacing: -.1em;
+  }
 }
 .browsehappy {
   margin: 0.2em 0;

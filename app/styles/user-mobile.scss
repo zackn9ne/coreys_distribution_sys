@@ -10,6 +10,7 @@
       display: none !important; 
     }
 }
+
 .navbar-default {
     .navbar-collapse {
         background: #eaeaea;
@@ -21,6 +22,10 @@
               }
           }
     }
+}
+
+.tight-mob {
+  letter-spacing: -.1em;
 }
 
 }
