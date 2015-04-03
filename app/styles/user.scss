@@ -10,7 +10,7 @@ p {
 	font-size: 20px;
 }
 .nav > li {
-  display: inline-block !important;
+  display: inline-block; 
 }
 .navbar-nav {
   float: none !important;
@@ -130,6 +130,8 @@ p {
         padding: 1.9em .7em 2.7em .7em;
         display: block;
         height: 200px;
+        position: relative;
+        top: 2em;
         h1{ font-size: 60px;
           font-weight: 100;
           font-family: "Open Sans Light",X-LocaleSpecific-Light,"Open Sans",X-LocaleSpecific,sans-serif;
