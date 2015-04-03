@@ -8971,7 +8971,7 @@ p {
 }
 
 .nav > li {
-  display: inline-block !important;
+  display: inline-block;
 }
 
 .navbar-nav {
@@ -9093,6 +9093,8 @@ p {
   padding: 1.9em .7em 2.7em .7em;
   display: block;
   height: 200px;
+  position: relative;
+  top: 2em;
 }
 #page-head h1 {
   font-size: 60px;
@@ -9342,6 +9344,11 @@ a:link, a:visited {
   margin-right: auto;
 }
 
+@media (max-width: 900px) {
+  .no-mobile {
+    display: none !important;
+  }
+}
 @media (max-width: 767px) {
   #page-head h1 {
     font-size: 3em;
