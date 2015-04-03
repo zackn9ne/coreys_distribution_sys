@@ -5,6 +5,10 @@
 }
 @media (max-width: 767px) {
 
+.ipad-wrapper {
+  width: inherit !important;
+}
+
 #page-head h1 {
 	font-size: 3em;
 }
@@ -29,6 +33,10 @@
     }
 }
 
+
+.regulation {
+  max-width: 250px;
+}
 .tight-mob {
   letter-spacing: -.1em;
 }

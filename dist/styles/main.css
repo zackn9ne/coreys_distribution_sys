@@ -8962,7 +8962,26 @@ button.close {
 }
 
 body {
-  padding-top: 90px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.regulation {
+  max-width: 520px;
+}
+
+#credit {
+  background: #02627E;
+}
+#credit p {
+  color: lightseagreen;
+}
+#credit a {
+  color: white;
+}
+
+#instafeed {
+  display: inline-block;
 }
 
 p {
@@ -9046,8 +9065,7 @@ p {
 
 .navbar {
   background: black;
-  min-height: 50px;
-  padding: 3em 0 0 0;
+  height: 85px;
   color: white;
 }
 
@@ -9061,12 +9079,9 @@ p {
 }
 
 .bg {
-  left: 10px;
   bottom: 0;
   margin: -5px;
   padding: 5px;
-  background: rgba(204, 204, 204, 0.8) url(http://d36xtkk24g8jdx.cloudfront.net/bluebar/0ff4199/images/bg/white-gradient-300px.png) repeat-x 0 100%;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);
   transition: all .15s ease-out .1s;
 }
 
@@ -9094,7 +9109,7 @@ p {
   display: block;
   height: 200px;
   position: relative;
-  top: 2em;
+  margin-top: 85px;
 }
 #page-head h1 {
   font-size: 60px;
@@ -9178,8 +9193,8 @@ h1 {
 }
 
 body {
-  background: url("../images/header.jpg") no-repeat center center fixed;
-  background-size: cover;
+  padding: 0;
+  margin: 0;
   text-align: center;
   color: #484848;
   background: #333;
@@ -9236,7 +9251,6 @@ body {
 
 #corey_appears {
   color: #363A36;
-  padding: 80px 20px 120px 36px;
   text-align: center;
 }
 
@@ -9325,8 +9339,9 @@ a:link, a:visited {
   padding: 56px 3px 0px 0px;
   margin: 0px auto;
   height: 650px;
-  width: 751px;
   display: block;
+  overflow-x: hidden;
+  width: 750px;
 }
 
 #yt_videosurround {
@@ -9350,6 +9365,10 @@ a:link, a:visited {
   }
 }
 @media (max-width: 767px) {
+  .ipad-wrapper {
+    width: inherit !important;
+  }
+
   #page-head h1 {
     font-size: 3em;
   }
@@ -9367,6 +9386,10 @@ a:link, a:visited {
   }
   .navbar-default .navbar-collapse ul.nav li a {
     color: #333333;
+  }
+
+  .regulation {
+    max-width: 250px;
   }
 
   .tight-mob {

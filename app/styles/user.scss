@@ -1,10 +1,26 @@
 $text-grey: #696969; 
+$twizel-dark: #02627E;
 
 body {
-  padding-top: 90px !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-
+.regulation {
+  max-width: 520px;
+}
+#credit {
+  background: $twizel-dark;
+  p {  
+    color: lightseagreen;
+  }
+  a {
+    color: white;
+  }
+}
+#instafeed { 
+  display: inline-block;
+ }
 p {
 	color: $text-grey;
 	font-size: 20px;
@@ -75,7 +91,11 @@ p {
     }
   }
 
-  .navbar { background: black; min-height: 50px; padding: 3em 0 0 0; color: white }
+  .navbar { 
+    background: black; 
+    height: 85px;  
+    color: white 
+  }
   .btn {    color: #FFF;
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
     background-color: #006DCC;
@@ -86,15 +106,10 @@ p {
 
   .bg {
   //  top: 25px;
-  left: 10px;
   bottom: 0;
         //  width: 100%;
         margin: -5px;
         padding: 5px;
-        background: rgba(204,204,204,.8)url(http://d36xtkk24g8jdx.cloudfront.net/bluebar/0ff4199/images/bg/white-gradient-300px.png) repeat-x 0 100%;
-        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.1);
-        -moz-box-shadow: 0 0 0 1px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.1);
-        box-shadow: 0 0 0 1px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.1);
         -webkit-transition: all .15s ease-out .1s;
         -moz-transition: all .15s ease-out .1s;
         -o-transition: all .15s ease-out .1s;
@@ -131,7 +146,7 @@ p {
         display: block;
         height: 200px;
         position: relative;
-        top: 2em;
+        margin-top: 85px;
         h1{ font-size: 60px;
           font-weight: 100;
           font-family: "Open Sans Light",X-LocaleSpecific-Light,"Open Sans",X-LocaleSpecific,sans-serif;
@@ -210,11 +225,8 @@ p {
 }
 
 body {
-  background: url("../images/header.jpg")no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  padding: 0;
+  margin: 0;
   text-align: center;
   color: #484848;
   background: #333;
@@ -274,7 +286,6 @@ body {
   }
   #corey_appears {
     color: #363A36;
-    padding: 80px 20px 120px 36px;
     text-align: center;
   }
 
@@ -359,8 +370,9 @@ a:link, a:visited {
   padding: 56px 3px 0px 0px;
   margin: 0px auto;
   height: 650px;
-  width: 751px;
   display: block;
+  overflow-x: hidden;
+  width: 750px;
 }
 
 #yt_videosurround {
