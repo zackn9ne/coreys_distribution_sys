@@ -1,4 +1,21 @@
+@media (min-width: 1065px) {
+  .big-ipad-down {
+    display: none !important;
+  }
+}
+@media (max-width: 1064px) {
+  .no-big-ipad {
+    display: none !important; 
+  }
+  .big-ipad-down {
+    display: inline-block;
+  }
+}
 @media (max-width: 900px) {
+/*burgerbar*/
+.navbar-collapse {
+  background: $darkest 
+}
   .no-mobile {
     display: none !important; 
   }

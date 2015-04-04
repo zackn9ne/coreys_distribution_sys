@@ -11,21 +11,6 @@ function greetz(divName) {
 
 
 //script for smooth scroll
-$('a[href*=#]:not([href=#])').click(function () {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-        || location.hostname == this.hostname) {
-
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-
-
-        if (target.length) {
-            $('html,body').animate({ scrollTop: target.offset().top - 85}, 500);
-            window.location.hash = hashStr;
-            return false;
-        }
-    }
-});
 
 //sanity check key check
 // var feed = new Instafeed({
@@ -71,17 +56,43 @@ function cycle() {
 }
 
 // close bootstrap mobile menu
-$('ul.nav').on('click',function(){
-  $('.collapse').collapse('hide');
-});
+function closeBurger() {
+  $('ul.nav li a').on('click',function(){
+    $('.collapse').collapse('hide');
+  })
+}
 
 
+function smoothTop() {
+  $("a[href='#top']").click(function() {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  })
+}
+
+function smoothClassSmooth() {
+$('a.smooth').on('click',function (e) {
+      e.preventDefault();
+
+      var target = this.hash;
+      var $target = $(target);
+
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top-85
+      }, 900, 'swing', function () {
+          window.location.hash = target;
+      });
+  });
+}
 //go go go!
 $(function() { // document ready
 
     coreyFeed.run();
     cycle();
+    closeBurger();
     greetz('thing');
+    smoothTop();
+    smoothClassSmooth();
 
     $('.jcarousel-prev.jcarousel-prev-horizontal').click(function() {
         greetz('thing');
@@ -111,6 +122,4 @@ $(function() { // document ready
 // 	    var nextVid = videos[currentVid ++]
 // 	}
 // }
-
-
 
